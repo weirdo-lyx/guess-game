@@ -1,0 +1,15 @@
+{
+  "name": "simple-guess-number",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "simple_guess_number_bg.wasm",
+    "simple_guess_number.js",
+    "simple_guess_number.d.ts"
+  ],
+  "main": "simple_guess_number.js",
+  "types": "simple_guess_number.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
