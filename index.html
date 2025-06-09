@@ -11,17 +11,19 @@
 <body>
     <h1>猜数字 (1-100)</h1>
     <input type="number" id="guess" min="1" max="100" placeholder="输入数字">
-    <button onclick="play()">提交</button>
+    <button id="submit">提交</button>  <!-- 移除 onclick -->
     <p id="result"></p>
 
     <script type="module">
-        import init, { start_game, check_guess } from './pkg/simple_guess_number.js';
+        import init, { start_game, check_guess } from './pkg/simple_guess_number.js'; // 改为相对路径
 
         let secret = 0;
         
         async function run() {
             await init();
-            secret = start_game();  // 初始化游戏
+            secret = start_game();
+            // 初始化完成后才绑定事件
+            document.getElementById("submit").addEventListener("click", play);
         }
 
         function play() {
